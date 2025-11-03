@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pilih Formulir Internal Hastari Corp</title>
+<style>
+  :root { --primary:#007bff; --primary-dark:#0056b3; --bg:#f8f9fa; --text:#333; }
+  body{font-family:'Segoe UI',Arial,sans-serif;background:var(--bg);margin:0;min-height:100vh;display:flex;flex-direction:column;align-items:center}
+  header{text-align:center;padding:20px 10px 10px}
+  h1{margin:0;font-size:1.5em;color:var(--text)} p{margin-top:8px;color:#555}
+  .button-container{width:90%;max-width:400px;display:flex;flex-direction:column;gap:12px;align-items:center;margin-top:10px}
+  button{width:100%;background:var(--primary);color:#fff;border:0;padding:14px 0;border-radius:8px;font-size:16px;font-weight:600;cursor:pointer}
+  button:hover{background:var(--primary-dark)}
+  iframe{width:95%;max-width:700px;height:1000px;border:0;margin:20px 0;background:#fff;border-radius:10px;box-shadow:0 4px 15px rgba(0,0,0,.1)}
+  footer{font-size:12px;color:#777;padding:10px 0;text-align:center}
+  @media (max-width:600px){h1{font-size:1.3em} iframe{height:900px}}
+</style>
+<script>
+function showForm(which){
+  const iframe=document.getElementById("formFrame");
+  // Disarankan gunakan URL EMBED Google Form (lihat Catatan penting di bawah)
+  iframe.src = which==='dinas'
+    ? "https://forms.gle/gDyLMJ1ajk1adopp8"
+    : "https://forms.gle/g8VbHqzVnFZAr5sf6";
+  iframe.scrollIntoView({behavior:"smooth"});
+}
+</script>
+</head>
+<body>
+  <header>
+    <h1>Formulir Internal Hastari Corp</h1>
+    <p>Pilih formulir yang ingin diisi:</p>
+  </header>
+
+  <div class="button-container">
+    <button onclick="showForm('dinas')">✈️ Formulir Perjalanan Dinas</button>
+    <button onclick="showForm('gocorp')">🔓 Formulir Buka Akses GoCorp</button>
+  </div>
+
+  <iframe id="formFrame" src=""></iframe>
+
+  <footer>&copy; 2025 Hastari Corp</footer>
+</body>
+</html>
